@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Picker</title>
-    <script defer src="./index.js"></script>
-    <style>
-        img { height: 15rem; }
-        sup { color: red; }
-        form, ul { display: flex; gap: 1rem; padding: 1rem; border: 0.1rem solid #000; }
-        form { flex-direction: column; width: fit-content; }
-        #pet-list { flex-wrap: wrap; list-style: none; }
-      </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Picker</title>
+  <script defer src="./index.js"></script>
+  <style>
+    img { height: 15rem; }
+    sup { color: red; }
+    form, ul { display: flex; gap: 1rem; padding: 1rem; border: 0.1rem solid #000; }
+    form { flex-direction: column; width: fit-content; }
+    #pet-list { flex-wrap: wrap; list-style: none; }
+  </style>
 </head>
 <body>
-    <main>
-        <h1>Pet Tracker</h1>
-        <form>
-            <label for="pet-name">Pet Name:<sup>*</sup>
-                <input type="text" name="pet-name" id="pet-name" required>
-            </label>
-            <br>
-            <label for="pet-picture">Pet Picture URL:<sup>*</sup>
-                <input type="text" name="pet-picture" id="pet-picture" placeholder="Picture URL" required>
-            </label>
-            <br>
-            <fieldset>
-                <legend>Species<sup>*</sup></legend>
-                <label for="dog">
-                    <input type="radio" name="species" value="dog" id="dog" required>Dog
-                </label>
-                <label for="cat">
-                    <input type="radio" name="species" value="cat" id="cat" required>Cat
-                </label>
-                <label for="bird">
-                    <input type="radio" name="species" value="bird" id="bird" required>Bird
-                </label>
-            </fieldset>
-            <label for="isFriendly">Are they friendly?
-                <input type="checkbox" name="isFriendly" id="isFriendly">
-            </label>
-            <button type="submit" id="submit">Add Pet!</button>
-        </form>
+  <main>
+    <!-- <section> -->
+      <h1>Pet Tracker</h1>
+      <form>
+        <label for="pet-name">Pet Name:<sup>*</sup>
+          <input type="text" name="pet-name" id="pet-name" required>
+        </label>
+
+        <br>
+
+        <label for="pet-picture">Pet Picture URL:<sup>*</sup>
+          <input type="text" name="pet-picture" id="pet-picture" placeholder="Picture URL" required>
+        </label>
+
+        <br>
+
+        <fieldset>
+          <legend>Species<sup>*</sup></legend>
+
+          <label for="dog">
+            <input type="radio" name="species" value="dog" id="dog" required>Dog
+          </label>
+
+          <label for="cat">
+            <input type="radio" name="species" value="cat" id="cat" required>Cat
+          </label>
+
+          <label for="bird">
+            <input type="radio" name="species" value="bird" id="bird" required>Bird
+          </label>
+        </fieldset>
+            
+        <label for="isFriendly">Are they friendly?
+          <input type="checkbox" name="isFriendly" id="isFriendly">
+        </label>
+
+        <button type="submit" id="submit">Add Pet!</button>
+      </form>
+    <!-- </section> -->
         <section>
             <h2>Pet List</h2>
-            <ul></ul>
+            <ul aria-label="pet-list"></ul>
         </section>
-    </main>
+  </main>
 </body>
 </html>
