@@ -1,13 +1,5 @@
-const express = require('express');
-const app = express();
-app.get('/health', (req, res) => {
-    res.send('hello');
-})
-app.listen(3001, () => {
-    console.log('http://localhost:3001');
-});
-
 const pets = [];
+const form = document.querySelector('form');
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -21,7 +13,6 @@ const handleSubmit = (e) => {
   console.log(pets);
 }
 const main = () => {
-  const form = document.querySelector('form');
   form.addEventListener('submit', handleSubmit);
 }
 main();
