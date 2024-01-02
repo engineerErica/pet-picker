@@ -12,11 +12,16 @@ const appendPet = (name, picURL, isFriendly, species) => {
   h4.textContent = isFriendly ? 'Friendly!' : 'Not so friendly...'
   const h5 = document.createElement('h5');
   h5.textContent = `Species: ${species}`;
-  li.append(h3, img, h4, h5);
+
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove';
+  removeBtn.addEventListener('click', (e) => li.remove());
+
+  li.append(h3, img, h4, h5, removeBtn);
   petList.append(li);
 }
 
-const handleSubmit = (e) => {
+const handleAddPetSubmit = (e) => {
   e.preventDefault();
   const form = e.target;
   const formData = new FormData(form);
@@ -28,7 +33,8 @@ const handleSubmit = (e) => {
   // console.log(pets);
   appendPet(formObj.petName, formObj.petPicture, formObj.isFriendly, formObj.species);
 }
+
 const main = () => {
-  form.addEventListener('submit', handleSubmit);
+  form.addEventListener('submit', handleAddPetSubmit);
 }
 main();

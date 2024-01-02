@@ -16,3 +16,11 @@ const publicDir = path.join(__dirname, '..', 'public');
 const staticAssets = express.static(publicDir);
 // Here we are using the static file with every request
 app.use(staticAssets);
+
+
+/** deleting pets using sql and express
+ * app.delete('/deletepet:id/', async (req, res) => {
+ * const { id } = req.params;
+ * await Pet.delete(id)
+ * })
+ */
