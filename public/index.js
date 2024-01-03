@@ -9,7 +9,7 @@ const appendPet = (obj) => {
   h3.textContent = obj.name;
 
   const img = document.createElement('img');
-  img.src = obj.picURL;
+  img.src = obj.url;
 
   const h4 = document.createElement('h4');
   h4.textContent = obj.isFriendly ? 'Friendly!' : 'Not so friendly...'
