@@ -28,7 +28,6 @@ app.get('/petlist', async (req, res) => {
 
 app.post('/addpet', async (req, res) => {
   const { body } = req;
-  // console.log(body)
   const { petName, petPicture, species, isFriendly } = body; // won't work without the middleware above!
   console.log(petName, petPicture, species, isFriendly)
   const newPet = await Pet.create(petName, petPicture, species, isFriendly); // creates a fellow and adds it to the list
@@ -38,6 +37,5 @@ app.post('/addpet', async (req, res) => {
 // deleting pets using sql and express
  app.delete('/deletepet:id', async (req, res) => {
   const { id } = req.params;
-  // console.log('id: ', id)
   await Pet.delete(id)
  })
