@@ -7,6 +7,11 @@
  */
 exports.seed = async (knex) => {
     // Deletes ALL existing entries (you can just use knex and delete everything)
-    await knex('examples').del();
+    await knex('pets').del();
     // Now run your logic to create your resources with your models
+    await knex('pets').insert([
+      {id: 1, name: 'hello', url: 'hi', species: 'dog', is_friendly: true},
+      {id: 2, name: 'efdwqefeqwefqw', url: 'hello', species: 'dog', is_friendly: true},
+      {id: 3, name: 'efdwqefeqwefqw', url: 'bye', species: 'dog', is_friendly: true}
+    ]);
   };
