@@ -12,8 +12,7 @@ const appendPet = (obj) => {
   img.src = obj.url;
 
   const h4 = document.createElement('h4');
-  h4.textContent = obj.isFriendly ? 'Friendly!' : 'Not so friendly...'
-
+  h4.textContent = obj.isFriendly === "on" ? 'Friendly!' : 'not so friendly.'
   const h5 = document.createElement('h5');
   h5.textContent = `Species: ${obj.species}`;
 
@@ -55,8 +54,8 @@ const handleAddPetSubmit = (e) => {
       body: JSON.stringify(formObj),
     }).then(res => res.json()).then(data => appendPet(data));
   // } catch (err) {
-    // console.error(err);
-    // return null;
+  //   console.error(err);
+  //   return null;
   // }
 }
 
